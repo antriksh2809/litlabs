@@ -31,7 +31,7 @@ const Header = () => {
         <a href="/" className="flex items-center gap-3 group">
           <div className="w-18 h-18 md:w-20 md:h-20 flex items-center justify-center border-2 border-[#3BBBF0] rounded-xl group-hover:scale-105 transition-transform">
             <img 
-              src="/Learn_Innovate_Transform-removebg-preview.png" 
+              src="/ChatGPT Image Apr 30, 2025, 03_26_54 PM.png" 
               alt="L.I.T. Labs Logo" 
               className="h-[90%] w-[90%] object-contain"
             />

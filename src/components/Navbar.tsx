@@ -48,7 +48,7 @@ const Navbar = () => {
             transition={{ duration: 0.2 }}
           >
             <img 
-              src="C:\Users\faisa\Downloads\stem-clone-spark-main (2) (1)\public\Learn_Innovate_Transform-removebg-preview.png" 
+              src="/ChatGPT Image Apr 30, 2025, 03_26_54 PM.png" 
               alt="L.I.T. Labs Logo" 
               className="h-[90%] w-[90%] object-contain"
             />
