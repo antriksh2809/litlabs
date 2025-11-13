@@ -1,0 +1,93 @@
+{
+  "megaMenu": [
+    {
+      "label": "Products",
+      "columns": [
+        {
+          "title": "AI & Robotics Kits",
+          "items": [
+            { "label": "L.I.T. AI Tinker Kit", "href": "/products/ai-tinker-kit", "description": "100+ projects for beginners" },
+            { "label": "L.I.T. AI Innovate Kit", "href": "/products/ai-innovate-kit", "description": "Advanced robotics & AI" },
+            { "label": "View All Kits", "href": "/products?category=kits" }
+          ]
+        },
+        {
+          "title": "Add-ons & Sensors",
+          "items": [
+            { "label": "Motors & Actuators", "href": "/products?category=motors" },
+            { "label": "Sensors & Modules", "href": "/products?category=sensors" },
+            { "label": "Electronics Components", "href": "/products?category=electronics" }
+          ]
+        },
+        {
+          "title": "Software & Resources",
+          "items": [
+            { "label": "Software Downloads", "href": "/education/docs/software" },
+            { "label": "Quick Start Guides", "href": "/education/docs/quickstart" },
+            { "label": "Product Manuals", "href": "/education/docs" }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "School Programs",
+      "columns": [
+        {
+          "title": "Labs & Infrastructure",
+          "items": [
+            { "label": "AI & Robotics Lab", "href": "/programs/ai-robotics-lab", "description": "Complete lab setup" },
+            { "label": "Atal Tinkering Lab", "href": "/programs#atl", "description": "ATL-compliant solution" },
+            { "label": "ATL Digital Booklet", "href": "/labs", "description": "View full catalog" },
+            { "label": "Get a Quote", "href": "/programs#quote" }
+          ]
+        },
+        {
+          "title": "Implementation",
+          "items": [
+            { "label": "Teacher Training", "href": "/teacher-training" },
+            { "label": "Curriculum Support", "href": "/programs#curriculum" },
+            { "label": "AMC & Support", "href": "/programs#support" }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Workshops",
+      "columns": [
+        {
+          "title": "Student Bootcamps",
+          "items": [
+            { "label": "1-Day Workshop", "href": "/workshops/student?duration=1" },
+            { "label": "3-Day Bootcamp", "href": "/workshops/student?duration=3" },
+            { "label": "5-Day Intensive", "href": "/workshops/student?duration=5" }
+          ]
+        },
+        {
+          "title": "Teacher Training",
+          "items": [
+            { "label": "NEP-Aligned Modules", "href": "/teacher-training" },
+            { "label": "Certification Programs", "href": "/teacher-training#certification" },
+            { "label": "Training Calendar", "href": "/teacher-training#calendar" }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Education",
+      "columns": [
+        {
+          "title": "Learning Resources",
+          "items": [
+            { "label": "Courses (Class 1-12)", "href": "/education/courses" },
+            { "label": "Documentation", "href": "/education/docs" },
+            { "label": "Project Tutorials", "href": "/education/tutorials" }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Blog",
+      "href": "/blog"
+    }
+  ]
+}
