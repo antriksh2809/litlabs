@@ -43,7 +43,7 @@ const Navbar = () => {
           whileTap={{ scale: 0.95 }}
         >
           <motion.div 
-            className="w-6 h-6 flex items-center justify-center"
+            className="w-5 h-5 md:w-6 md:h-6 flex items-center justify-center"
             whileHover={{ rotate: 5 }}
             transition={{ duration: 0.2 }}
           >
@@ -53,7 +53,7 @@ const Navbar = () => {
               className="h-[90%] w-[90%] object-contain"
             />
           </motion.div>
-          <span className="text-2xl font-bold text-foreground group-hover:gradient-text transition-all duration-300">
+          <span className="text-xl md:text-2xl font-bold text-foreground group-hover:gradient-text transition-all duration-300">
             L.I.T. LABS
           </span>
         </motion.a>
