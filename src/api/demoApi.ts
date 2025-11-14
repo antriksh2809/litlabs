@@ -1,82 +1,51 @@
-// Mock API for demo lead submission
-// In production, replace this with actual backend integration
+import axios from 'axios';
+import { API_ENDPOINTS } from './apiConfig';
+
+export interface DemoLeadData {
+  name: string;
+  email: string;
+  phone: string;
+  role: string;
+  organisation: string;
+  country: string;
+  state?: string;
+  interests: string[];
+  preferredAtIST?: string;
+  message?: string;
+  utmSource?: string;
+  utmMedium?: string;
+  utmCampaign?: string;
+}
 
 export interface DemoLeadResponse {
-  ok: boolean;
-  id?: string;
+  success: boolean;
+  data?: {
+    id: string;
+    message: string;
+  };
   fieldErrors?: Record<string, string[]>;
   error?: string;
 }
 
-export async function submitDemoLead(data): Promise<DemoLeadResponse> {
-  // Simulate API delay
-  await new Promise(resolve => setTimeout(resolve, 1000));
-
+export async function submitDemoLead(data: DemoLeadData): Promise<DemoLeadResponse> {
   try {
-    // Simulate server-side validation
-    console.log('Demo Lead Submitted:', data);
-
-    // TODO: Replace with actual API call
-    // Example:
-    // const response = await fetch('/api/demo', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify(data),
-    // });
-    // return await response.json();
-
-    // Mock successful response
-    const mockId = `demo_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-
-    // Send email notification (mock)
-    sendEmailNotification(data, mockId);
-
-    return {
-      ok: true,
-      id: mockId,
-    };
-  } catch (error) {
+    const response = await axios.post(API_ENDPOINTS.DEMO_LEAD, data);
+    return response.data;
+  } catch (error: any) {
     console.error('Demo submission error:', error);
+    
+    // Handle validation errors
+    if (error.response?.data?.fieldErrors) {
+      return {
+        success: false,
+        fieldErrors: error.response.data.fieldErrors
+      };
+    }
+    
+    // Handle general errors
     return {
-      ok: false,
-      error: 'Server error. Please try again.',
+      success: false,
+      error: error.response?.data?.message || 'Server error. Please try again.'
     };
   }
-}
-
-// Mock email notification
-function sendEmailNotification(data: any, id: string) {
-  const emailBody = `
-New Demo Request Received
-========================
-
-ID: ${id}
-Name: ${data.name}
-Email: ${data.email}
-Phone: ${data.phone}
-Role: ${data.role}
-Organisation: ${data.organisation}
-Country/State: ${data.country}${data.state ? ` / ${data.state}` : ''}
-Interests: ${data.interests?.join(', ') || 'N/A'}
-Preferred Time (IST): ${data.preferredAtIST || 'N/A'}
-Message:
-${data.message || '-'}
-
-Captured at: ${new Date().toISOString()} (UTC)
-UTM Source: ${data.utmSource || 'organic'}
-UTM Medium: ${data.utmMedium || '-'}
-UTM Campaign: ${data.utmCampaign || '-'}
-  `.trim();
-
-  console.log('📧 Email would be sent to support@litlabs.in:');
-  console.log(emailBody);
-
-  // TODO: Replace with actual email service (Resend, Nodemailer, etc.)
-  // Example:
-  // await resend.emails.send({
-  //   from: 'noreply@litlabs.in',
-  //   to: 'support@litlabs.in',
-  //   subject: `New Demo Request — ${data.organisation} (${data.country})`,
-  //   text: emailBody,
-  // });
 }
