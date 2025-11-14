@@ -15,6 +15,7 @@ const products = [
     reviews: 124,
     badge: "Bestseller",
     inStock: true,
+    image: "/WhatsApp Image 2025-11-01 at 00.24.00.jpeg",
   },
   {
     id: 2,
@@ -26,6 +27,7 @@ const products = [
     reviews: 87,
     badge: "New",
     inStock: true,
+    image: "/WhatsApp Image 2025-11-01 at 00.32.33.jpeg",
   },
   {
     id: 3,
@@ -35,6 +37,7 @@ const products = [
     rating: 4.6,
     reviews: 203,
     inStock: true,
+    image: "/WhatsApp Image 2025-11-01 at 00.32.32.jpeg",
   },
   {
     id: 4,
@@ -44,6 +47,7 @@ const products = [
     rating: 4.7,
     reviews: 156,
     inStock: true,
+    image: "/WhatsApp Image 2025-10-28 at 21.10.23.jpeg",
   },
   {
     id: 5,
@@ -55,6 +59,7 @@ const products = [
     reviews: 34,
     badge: "Best Value",
     inStock: true,
+    image: "/Learn Innovate Transform.png",
   },
   {
     id: 6,
@@ -64,6 +69,7 @@ const products = [
     rating: 4.5,
     reviews: 89,
     inStock: true,
+    image: "/ChatGPT Image Apr 30, 2025, 03_26_54 PM.png",
   },
 ];
 
@@ -179,7 +185,12 @@ export default function Shop() {
                     className="group rounded-2xl border bg-card overflow-hidden hover-lift shadow-modern"
                   >
                     {/* Image */}
-                    <div className="aspect-[4/3] bg-gradient-to-br from-[#3BBBF0]/10 to-[#FF822E]/10 relative">
+                    <div className="aspect-[4/3] bg-gradient-to-br from-[#3BBBF0]/10 to-[#FF822E]/10 relative flex items-center justify-center">
+                      <img 
+                        src={product.image} 
+                        alt={product.title} 
+                        className="max-h-full max-w-full object-contain p-4"
+                      />
                       {product.badge && (
                         <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#FF822E] text-white text-xs font-semibold">
                           {product.badge}

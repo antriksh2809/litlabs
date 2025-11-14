@@ -25,7 +25,7 @@ const blogPosts = [
     author: "L.I.T. Labs Team",
     date: "2024-10-15",
     readTime: "5 min",
-    image: "/placeholder.svg"
+    image: "/WhatsApp Image 2025-11-01 at 00.24.00.jpeg"
   },
   {
     id: 2,
@@ -36,7 +36,7 @@ const blogPosts = [
     author: "Priya Sharma",
     date: "2024-10-12",
     readTime: "7 min",
-    image: "/placeholder.svg"
+    image: "/WhatsApp Image 2025-11-01 at 00.32.32.jpeg"
   },
   {
     id: 3,
@@ -47,7 +47,7 @@ const blogPosts = [
     author: "Rohan Mehta",
     date: "2024-10-10",
     readTime: "4 min",
-    image: "/placeholder.svg"
+    image: "/WhatsApp Image 2025-11-01 at 00.32.33.jpeg"
   },
   {
     id: 4,
@@ -58,7 +58,7 @@ const blogPosts = [
     author: "L.I.T. Labs Team",
     date: "2024-10-08",
     readTime: "10 min",
-    image: "/placeholder.svg"
+    image: "/Learn Innovate Transform.png"
   },
   {
     id: 5,
@@ -69,7 +69,7 @@ const blogPosts = [
     author: "Anjali Singh",
     date: "2024-10-05",
     readTime: "6 min",
-    image: "/placeholder.svg"
+    image: "/WhatsApp Image 2025-10-28 at 21.10.23.jpeg"
   },
   {
     id: 6,
@@ -80,7 +80,7 @@ const blogPosts = [
     author: "Dr. Rajesh Kumar",
     date: "2024-10-03",
     readTime: "5 min",
-    image: "/placeholder.svg"
+    image: "/ChatGPT Image Apr 30, 2025, 03_26_54 PM.png"
   }
 ];
 

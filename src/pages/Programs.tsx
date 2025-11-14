@@ -20,6 +20,7 @@ const programs = [
       "Student assessment tools"
     ],
     outcomes: ["Hands-on project experience", "Critical thinking development", "NEP curriculum alignment"],
+    image: "/WhatsApp Image 2025-11-01 at 00.24.00.jpeg",
   },
   {
     id: 2,
@@ -37,6 +38,7 @@ const programs = [
     ],
     outcomes: ["Government compliance", "Student innovation", "National recognition"],
     hasBooklet: true,
+    image: "/Learn Innovate Transform.png",
   },
   {
     id: 3,
@@ -53,6 +55,7 @@ const programs = [
       "Performance analytics"
     ],
     outcomes: ["Smooth deployment", "Teacher confidence", "Sustained engagement"],
+    image: "/WhatsApp Image 2025-11-01 at 00.32.33.jpeg",
   },
 ];
 

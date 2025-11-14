@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { ShoppingCart, Filter } from "lucide-react";
+import { ShoppingCart, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const products = [
@@ -12,7 +12,7 @@ const products = [
     category: "kits",
     price: 6999,
     compareAt: 7999,
-    image: "/placeholder.svg",
+    image: "/WhatsApp Image 2025-11-01 at 00.24.00.jpeg",
     description: "100+ projects for beginners in AI & Robotics",
     level: "beginner",
   },
@@ -23,7 +23,7 @@ const products = [
     category: "kits",
     price: 12999,
     compareAt: 14999,
-    image: "/placeholder.svg",
+    image: "/WhatsApp Image 2025-11-01 at 00.32.33.jpeg",
     description: "Advanced robotics & AI for innovators",
     level: "advanced",
   },
@@ -106,7 +106,12 @@ export default function Products() {
                 href={`/products/${product.slug}`}
                 className="group rounded-2xl border bg-card overflow-hidden hover-lift shadow-modern"
               >
-                <div className="aspect-[4/3] bg-gradient-to-br from-[#3BBBF0]/10 to-[#FF822E]/10 relative">
+                <div className="aspect-[4/3] bg-gradient-to-br from-[#3BBBF0]/10 to-[#FF822E]/10 relative flex items-center justify-center">
+                  <img 
+                    src={product.image} 
+                    alt={product.title} 
+                    className="max-h-full max-w-full object-contain p-8"
+                  />
                   {product.compareAt > product.price && (
                     <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-[#FF822E] text-white text-xs font-semibold">
                       Save {Math.round(((product.compareAt - product.price) / product.compareAt) * 100)}%
@@ -114,6 +119,14 @@ export default function Products() {
                   )}
                 </div>
                 <div className="p-6">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <Star key={star} className="h-4 w-4 fill-[#FF822E] text-[#FF822E]" />
+                      ))}
+                    </div>
+                    <span className="text-sm text-muted-foreground">(4.8)</span>
+                  </div>
                   <h3 className="font-semibold text-lg mb-2 group-hover:text-[#3BBBF0] transition-colors">
                     {product.title}
                   </h3>
