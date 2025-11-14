@@ -33,7 +33,7 @@ const ImpactSection = () => {
     "/WhatsApp Image 2025-11-01 at 00.24.00.jpeg",
     "/WhatsApp Image 2025-11-01 at 00.32.32.jpeg",
     "/WhatsApp Image 2025-11-01 at 00.32.33.jpeg",
-    "/Learn Innovate Transform.png"
+    "/WhatsApp Image 2025-10-28 at 21.10.23.jpeg"
   ];
 
   const containerVariants = {
