@@ -11,6 +11,7 @@ import ProgramDetail from "./pages/ProgramDetail";
 import Education from "./pages/Education";
 import EducationCourses from "./pages/EducationCourses";
 import EducationDocs from "./pages/EducationDocs";
+import EducationTutorials from "./pages/EducationTutorials";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Shop from "./pages/Shop";
@@ -42,6 +43,7 @@ const App = () => (
           <Route path="/education" element={<Education />} />
           <Route path="/education/courses" element={<EducationCourses />} />
           <Route path="/education/docs" element={<EducationDocs />} />
+          <Route path="/education/tutorials" element={<EducationTutorials />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/shop" element={<Shop />} />
