@@ -5,6 +5,7 @@ import Solutions from "@/components/Solutions";
 import ShopCarousel from "@/components/ShopCarousel";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
+import ImpactSection from "@/components/ImpactSection";
 
 const Index = () => {
   return (
@@ -12,6 +13,7 @@ const Index = () => {
       <Header />
       <HeroSection />
       <AboutSection />
+      <ImpactSection />
       <Solutions />
       <ShopCarousel />
       <Testimonials />
