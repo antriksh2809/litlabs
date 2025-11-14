@@ -6,6 +6,7 @@ import ShopCarousel from "@/components/ShopCarousel";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 import ImpactSection from "@/components/ImpactSection";
+import ApiTest from "@/components/ApiTest";
 
 const Index = () => {
   return (
@@ -17,6 +18,7 @@ const Index = () => {
       <Solutions />
       <ShopCarousel />
       <Testimonials />
+      <ApiTest />
       <Footer />
     </div>
   );
