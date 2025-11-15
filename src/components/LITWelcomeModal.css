@@ -1,0 +1,275 @@
+/* Gradient background overlay - full screen version */
+.lit-welcome-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #17a2b8 0%, #6c5ce7 50%, #d63031 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Modal container - full screen version */
+.lit-welcome-modal {
+  width: 90%;
+  max-width: 800px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  position: relative;
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Content styling - full screen version */
+.lit-welcome-content {
+  padding: 40px;
+  text-align: center;
+  color: white;
+}
+
+.lit-welcome-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.lit-welcome-subheading {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+/* Input container - full screen version */
+.lit-input-container {
+  display: flex;
+  gap: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Input field with glassmorphism effect - full screen version */
+.lit-name-input {
+  flex: 1;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.lit-name-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.lit-name-input:focus {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+/* Go button - full screen version */
+.lit-go-button {
+  padding: 15px 30px;
+  background: white;
+  color: #17a2b8;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.lit-go-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.lit-go-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Landing page version - positioned in left corner */
+.lit-welcome-overlay-landing {
+  position: fixed;
+  top: 100px;
+  left: 20px;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Modal container - landing page version */
+.lit-welcome-modal-landing {
+  width: 350px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(5px);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Content styling - landing page version */
+.lit-welcome-content-landing {
+  padding: 20px;
+  color: #333;
+}
+
+.lit-welcome-heading-landing {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #2D3748;
+}
+
+.lit-welcome-subheading-landing {
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  color: #4A5568;
+}
+
+/* Input container - landing page version */
+.lit-input-container-landing {
+  display: flex;
+  gap: 8px;
+}
+
+/* Input field - landing page version */
+.lit-name-input-landing {
+  flex: 1;
+  padding: 10px 15px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid #E2E8F0;
+  border-radius: 25px;
+  color: #333;
+  font-size: 0.9rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.lit-name-input-landing::placeholder {
+  color: #A0AEC0;
+}
+
+.lit-name-input-landing:focus {
+  background: rgba(255, 255, 255, 1);
+  border-color: #4299E1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+}
+
+/* Go button - landing page version */
+.lit-go-button-landing {
+  padding: 10px 20px;
+  background: #4299E1;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.lit-go-button-landing:hover:not(:disabled) {
+  background: #3182CE;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.lit-go-button-landing:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { 
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .lit-welcome-content {
+    padding: 30px 20px;
+  }
+  
+  .lit-welcome-heading {
+    font-size: 2rem;
+  }
+  
+  .lit-input-container {
+    flex-direction: column;
+  }
+  
+  .lit-go-button {
+    width: 100%;
+  }
+  
+  /* Landing page version - responsive */
+  .lit-welcome-overlay-landing {
+    top: 80px;
+    left: 10px;
+  }
+  
+  .lit-welcome-modal-landing {
+    width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .lit-welcome-heading {
+    font-size: 1.8rem;
+  }
+  
+  .lit-welcome-subheading {
+    font-size: 1rem;
+  }
+  
+  .lit-welcome-content {
+    padding: 25px 15px;
+  }
+  
+  /* Landing page version - mobile */
+  .lit-welcome-overlay-landing {
+    top: 70px;
+    left: 5px;
+  }
+  
+  .lit-welcome-modal-landing {
+    width: 280px;
+  }
+  
+  .lit-welcome-heading-landing {
+    font-size: 1.2rem;
+  }
+}

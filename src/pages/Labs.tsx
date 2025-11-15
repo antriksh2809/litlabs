@@ -69,7 +69,7 @@ const Labs = () => {
               { 
                 title: "Play Equipment", 
                 description: "200+ safe and engaging play solutions", 
-                image: "/Learn_Innovate_Transform-removebg-preview.png" 
+                image: "/WhatsApp Image 2025-11-01 at 00.24.00.jpeg" 
               }
             ].map((category, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow">

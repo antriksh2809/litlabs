@@ -30,10 +30,22 @@ const ImpactSection = () => {
   ];
 
   const impactImages = [
-    "/WhatsApp Image 2025-11-01 at 00.24.00.jpeg",
-    "/WhatsApp Image 2025-11-01 at 00.32.32.jpeg",
-    "/WhatsApp Image 2025-11-01 at 00.32.33.jpeg",
-    "/WhatsApp Image 2025-10-28 at 21.10.23.jpeg"
+    { 
+      src: "/WhatsApp Image 2025-11-01 at 00.24.00.jpeg", 
+      alt: "Students working on robotics projects in a classroom setting" 
+    },
+    { 
+      src: "/WhatsApp Image 2025-11-01 at 00.32.32.jpeg", 
+      alt: "AI workshop with students and teachers collaborating" 
+    },
+    { 
+      src: "/WhatsApp Image 2025-11-01 at 00.32.33.jpeg", 
+      alt: "Teachers receiving training on STEM education methods" 
+    },
+    { 
+      src: "/WhatsApp Image 2025-10-28 at 21.10.23.jpeg", 
+      alt: "Science exhibition showcasing student innovations" 
+    }
   ];
 
   const containerVariants = {
@@ -120,8 +132,8 @@ const ImpactSection = () => {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <img
-                  src={image}
-                  alt={`Impact ${index + 1}`}
+                  src={image.src}
+                  alt={image.alt}
                   className="w-full h-full object-cover"
                 />
               </motion.div>

@@ -16,7 +16,14 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Shop from "./pages/Shop";
 import Labs from "./pages/Labs";
+import Accessibility from "./pages/Accessibility";
 import ComingSoon from "./components/ComingSoon";
+import Learn from "./pages/Learn";
+import Innovate from "./pages/Innovate";
+import Transform from "./pages/Transform";
+import Solutions from "./pages/Solutions";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 // Debug component to log current path
 const DebugRoute = () => {
@@ -36,6 +43,12 @@ const App = () => (
         <DebugRoute />
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/learn" element={<Learn />} />
+          <Route path="/innovate" element={<Innovate />} />
+          <Route path="/transform" element={<Transform />} />
+          <Route path="/solutions" element={<Solutions />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/products" element={<Products />} />
           <Route path="/products/:slug" element={<ProductDetail />} />
           <Route path="/programs" element={<Programs />} />
@@ -48,6 +61,7 @@ const App = () => (
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/labs" element={<Labs />} />
+          <Route path="/accessibility" element={<Accessibility />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<ComingSoon />} />
         </Routes>

@@ -53,7 +53,7 @@ const Navbar = () => {
               className="h-[90%] w-[90%] object-contain"
             />
           </motion.div>
-          <span className="text-xl md:text-2xl font-bold text-foreground group-hover:gradient-text transition-all duration-300">
+          <span className="text-lg md:text-xl font-bold text-foreground group-hover:gradient-text transition-all duration-300">
             L.I.T. LABS
           </span>
         </motion.a>
@@ -64,8 +64,8 @@ const Navbar = () => {
             <a href="#home" className="text-sm font-medium hover:text-primary transition-colors">
               Home
             </a>
-            <a href="#innovation-labs" className="text-sm font-medium hover:text-primary transition-colors">
-              Innovation Labs
+            <a href="#innovation-stations" className="text-sm font-medium hover:text-primary transition-colors">
+              Innovation Stations
             </a>
             <a href="#kits" className="text-sm font-medium hover:text-primary transition-colors">
               AI & Robotics Kits
@@ -137,8 +137,8 @@ const Navbar = () => {
                   <a href="#home" className="block px-4 py-2 text-sm font-medium hover:text-primary transition-colors">
                     Home
                   </a>
-                  <a href="#innovation-labs" className="block px-4 py-2 text-sm font-medium hover:text-primary transition-colors">
-                    Innovation Labs
+                  <a href="#innovation-stations" className="block px-4 py-2 text-sm font-medium hover:text-primary transition-colors">
+                    Innovation Stations
                   </a>
                   <a href="#kits" className="block px-4 py-2 text-sm font-medium hover:text-primary transition-colors">
                     AI & Robotics Kits

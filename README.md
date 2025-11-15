@@ -1,73 +1,146 @@
-# Welcome to L.I.T. LABS
+# L.I.T. Labs - STEM Education Platform
 
-## Project info
+A modern, responsive website for L.I.T. Labs, an education technology company providing hands-on STEM learning solutions for K-12 schools.
 
-**URL**: https://litlabs.in
+## Project Overview
 
-## How can I edit this code?
+This project transforms the L.I.T. Labs website into a comprehensive platform showcasing their AI, Robotics, and IoT learning solutions. The site features interactive elements, educational content, and multiple engagement pathways for schools and educators.
 
-There are several ways of editing your application.
+## Key Features
 
-**Use the L.I.T. LABS platform**
+### User Experience
+- Modern, clean design with STEM-focused visuals
+- Full mobile responsiveness
+- Animated micro-interactions throughout
+- Clear navigation with quick access to key sections
 
-Simply visit the [L.I.T. LABS Project](https://litlabs.in) and start prompting.
+### Educational Content
+- Detailed Innovation Stations (Robotics & IoT, AI, Drones, 3D Printing)
+- NEP 2020 and NCF 2023 alignment badges
+- Project showcase with sample implementations
+- Resource library with blog posts and tutorials
 
-Changes made via L.I.T. LABS will be committed automatically to this repo.
+### Interactive Elements
+- Video tours of labs and classroom projects
+- STEM challenge quiz widget
+- Virtual demo widgets
+- Community forum for educators
 
-**Use your preferred IDE**
+### Engagement & Support
+- Persistent "Book a Demo" and "Contact" buttons
+- WhatsApp chat integration
+- Community forum for teachers and schools
+- Newsletter signup with confirmation
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in L.I.T. LABS.
+### Partner Portal
+- Secure login for partner schools
+- Exclusive resources and training materials
+- Progress tracking and analytics
+- Technical support access
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Accessibility & SEO
+- WCAG 2.1 AA compliance
+- Proper contrast ratios and keyboard navigation
+- Semantic HTML and structured data
+- Dynamic metadata and alt text
 
-Follow these steps:
+## Technology Stack
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- **Frontend**: React, TypeScript, Tailwind CSS
+- **UI Components**: Framer Motion, Lucide React
+- **State Management**: React Hooks
+- **Routing**: React Router
+- **Build Tool**: Vite
+- **Deployment**: Static hosting ready
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## Project Structure
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+src/
+├── components/          # Reusable UI components
+├── pages/              # Page components
+├── assets/             # Images and static assets
+├── api/                # API integration services
+├── lib/                # Utility functions and schemas
+└── hooks/              # Custom React hooks
 ```
 
-**Edit a file directly in GitHub**
+## Key Components
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### New Components
+- `InnovationStations.tsx` - Technology station showcase
+- `GallerySection.tsx` - Achievements and event gallery
+- `StickyCTA.tsx` - Persistent call-to-action buttons
+- `BlogSection.tsx` - Resource library
+- `QuizWidget.tsx` - Interactive STEM quiz
+- `WhatsAppChat.tsx` - Customer support chat
+- `NewsletterSignup.tsx` - Email subscription
+- `LoginPortal.tsx` - Partner school login
+- `ContactForm.tsx` - Enhanced contact form
+- `CommunityForum.tsx` - Teacher community
+- `Accessibility.tsx` - Accessibility statement
+- `CRMIntegration.tsx` - Analytics and CRM integration
 
-**Use GitHub Codespaces**
+### Enhanced Components
+- `Navbar.tsx` - Improved mobile responsiveness
+- `HeroSection.tsx` - Added animations and personalization
+- `Solutions.tsx` - Integrated video tours
+- `Testimonials.tsx` - Added video support
+- `ImpactSection.tsx` - Enhanced image accessibility
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Getting Started
 
-## What technologies are used for this project?
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Start development server: `npm run dev`
+4. Build for production: `npm run build`
 
-This project is built with:
+## Accessibility
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+This site is partially conformant with WCAG 2.1 level AA. Features include:
+- Sufficient color contrast
+- Keyboard navigation support
+- Screen reader compatibility
+- Alternative text for images
+- Proper ARIA attributes
 
-## How can I deploy this project?
+For detailed accessibility information, visit `/accessibility`.
 
-Simply open [L.I.T. LABS](https://litlabs.in) and click on Share -> Publish.
+## SEO Features
 
-## Can I connect a custom domain to my L.I.T. LABS project?
+- Dynamic page titles and meta descriptions
+- Structured data (JSON-LD) for rich snippets
+- Semantic HTML structure
+- Descriptive alt text for all images
+- Mobile-responsive design
 
-Yes, you can!
+## Deployment
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+The site is built as a static application and can be deployed to any static hosting service:
+- Vercel
+- Netlify
+- GitHub Pages
+- AWS S3
+- Firebase Hosting
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## License
+
+This project is proprietary to L.I.T. Labs and should not be distributed without permission.
+
+## Contact
+
+For questions about this project, contact the L.I.T. Labs development team.

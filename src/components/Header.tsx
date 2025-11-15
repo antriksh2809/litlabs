@@ -1,215 +1,203 @@
 import { useState, useEffect } from "react";
-import { ShoppingCart, Search, User, Menu as MenuIcon, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X, Phone, Mail, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { motion, AnimatePresence } from "framer-motion";
-import MegaMenu from "./MegaMenu";
-import BookDemoDialog from "./BookDemoDialog";
-import menuData from "@/data/menu.json";
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
-  const [demoDialogOpen, setDemoDialogOpen] = useState(false);
+  const [userName, setUserName] = useState("");
+  const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    // Get user name from localStorage
+    const storedName = localStorage.getItem("userNameLIT");
+    if (storedName) {
+      setUserName(storedName);
+    }
+  }, []);
+
+  useEffect(() => {
+    // Set page title and meta description based on route
+    let title = "L.I.T. Labs - Learn. Innovate. Transform.";
+    let description = "The complete 21st century skills ecosystem. Learn from industry experts. Innovate with AI-powered personalization. Transform with hands-on labs.";
+
+    switch (location.pathname) {
+      case "/":
+        title = "L.I.T. Labs - The Complete 21st Century Skills Ecosystem";
+        description = "Learn from industry experts. Innovate with AI-powered personalization. Transform with hands-on labs. One complete ecosystem. Infinite possibilities.";
+        break;
+      case "/learn":
+        title = "Learn - L.I.T. Labs";
+        description = "Certified 21st-century skills courses taught by certified trainers. Available online & offline. Curriculum aligned with NEP 2020, NCF 2023, CBSE, ICSE.";
+        break;
+      case "/innovate":
+        title = "Innovate - L.I.T. Labs";
+        description = "AI-powered software that adapts to each student's unique learning style, pace, and needs. Real-time performance insights and intelligent recommendations.";
+        break;
+      case "/transform":
+        title = "Transform - L.I.T. Labs";
+        description = "Complete innovation ecosystem with ready-to-deploy labs for Robotics, AI, Drones, and 3D Printing. DIY kits and maker equipment for hands-on learning.";
+        break;
+      case "/solutions":
+        title = "Solutions - L.I.T. Labs";
+        description = "Complete school implementation solutions with certified courses, AI software, and innovation labs integrated into one platform.";
+        break;
+      case "/blog":
+        title = "Blog - L.I.T. Labs";
+        description = "Insights, resources, and updates on 21st century skills education, NEP implementation, and innovative teaching methods.";
+        break;
+    }
+
+    document.title = title;
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", description);
+    } else {
+      const meta = document.createElement('meta');
+      meta.name = "description";
+      meta.content = description;
+      document.head.appendChild(meta);
+    }
+
+    // Add structured data for SEO
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "L.I.T. Labs",
+      "url": "https://www.litlabs.in",
+      "logo": "https://www.litlabs.in/logo.png",
+      "description": "The complete 21st century skills ecosystem. Learn from industry experts. Innovate with AI-powered personalization. Transform with hands-on labs.",
+      "sameAs": [
+        "https://www.facebook.com/litlabs",
+        "https://www.twitter.com/litlabs",
+        "https://www.linkedin.com/company/litlabs",
+        "https://www.instagram.com/litlabs"
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+91-8468076121",
+          "contactType": "Customer Service"
+        }
+      ]
+    };
+
+    // Remove existing structured data
+    const existingScript = document.querySelector('script[type="application/ld+json"]');
+    if (existingScript) {
+      existingScript.remove();
+    }
+
+    const script = document.createElement('script');
+    script.type = "application/ld+json";
+    script.text = JSON.stringify(structuredData);
+    document.head.appendChild(script);
+  }, [location]);
+
+  const navItems = [
+    { name: "Learn", path: "/learn" },
+    { name: "Innovate", path: "/innovate" },
+    { name: "Transform", path: "/transform" },
+    { name: "Solutions", path: "/solutions" },
+    { name: "Blog", path: "/blog" },
+    { name: "About", path: "/about" },
+    { name: "Contact", path: "/contact" },
+  ];
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg border-b' 
-          : 'bg-white dark:bg-gray-900'
+      className={`fixed w-full z-40 transition-all duration-300 ${
+        isScrolled ? "bg-white shadow-lg py-2" : "bg-white/90 backdrop-blur-sm py-4"
       }`}
     >
-      <div className="flex items-center justify-between h-24 md:h-28 px-4">
-        {/* Logo */}
-        <a href="/" className="flex items-center gap-3 group">
-          <div className="w-18 h-18 md:w-20 md:h-20 flex items-center justify-center border-2 border-[#3BBBF0] rounded-xl group-hover:scale-105 transition-transform">
+      <div className="container mx-auto px-4">
+        <div className="flex justify-between items-center">
+          {/* Logo */}
+          <Link to="/" className="flex items-center space-x-2">
             <img 
-              src="/ChatGPT Image Apr 30, 2025, 03_26_54 PM.png" 
+              src="/Gemini_Generated_Image_mey00qmey00qmey0-removebg-preview.png" 
               alt="L.I.T. Labs Logo" 
-              className="h-[90%] w-[90%] object-contain"
+              className="h-10 w-auto"
             />
-          </div>
-          <span className="text-xl md:text-2xl font-bold text-foreground">
-            L.I.T. LABS
-          </span>
-        </a>
+            <span className="text-xl font-bold text-accent">L.I.T. Labs</span>
+          </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-1">
-          {menuData.megaMenu.map((item) => (
-            item.columns ? (
-              <MegaMenu key={item.label} label={item.label} columns={item.columns} />
-            ) : (
-              <a
-                key={item.label}
-                href={item.href}
-                className="px-3 py-2 text-sm font-medium hover:text-[#3BBBF0] transition-colors"
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-8">
+            {navItems.map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                className={`font-medium transition-colors hover:text-primary ${
+                  location.pathname === item.path ? "text-primary" : "text-foreground"
+                }`}
               >
-                {item.label}
-              </a>
-            )
-          ))}
-          <a
-            href="/shop"
-            className="px-3 py-2 text-sm font-medium hover:text-[#3BBBF0] transition-colors"
-          >
-            Shop
-          </a>
-        </nav>
+                {item.name}
+              </Link>
+            ))}
+          </nav>
 
-        {/* Right Actions */}
-        <div className="flex items-center gap-2 md:gap-3">
-          {/* Search */}
-          <button
-            onClick={() => setSearchOpen(!searchOpen)}
-            className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors hidden md:block"
-            aria-label="Search"
-          >
-            <Search className="h-5 w-5" />
-          </button>
+          {/* User Profile and Contact Info - Desktop */}
+          <div className="hidden md:flex items-center space-x-4">
+            <div className="flex items-center space-x-2 text-sm text-foreground">
+              <Phone className="h-4 w-4" />
+              <span>+91-8468076121</span>
+            </div>
+            <div className="flex items-center space-x-2 bg-muted px-3 py-2 rounded-full">
+              <User className="h-5 w-5 text-primary" />
+              <span className="text-sm font-medium">{userName || "Guest"}</span>
+            </div>
+          </div>
 
-          {/* Cart */}
-          <a
-            href="/cart"
-            className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors relative hidden md:block"
-            aria-label="Cart"
+          {/* Mobile Menu Button */}
+          <button 
+            className="md:hidden p-2"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            <ShoppingCart className="h-5 w-5" />
-            <span className="absolute -top-1 -right-1 w-4 h-4 bg-[#FF822E] text-white text-xs rounded-full flex items-center justify-center">
-              0
-            </span>
-          </a>
-
-          {/* Account */}
-          <a
-            href="/account"
-            className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors hidden md:block"
-            aria-label="Account"
-          >
-            <User className="h-5 w-5" />
-          </a>
-
-          {/* Book Demo CTA */}
-          <Button
-            onClick={() => setDemoDialogOpen(true)}
-            className="bg-[#FF822E] hover:bg-[#FF822E]/90 text-white hidden md:inline-flex"
-            size="sm"
-          >
-            Book a Demo
-          </Button>
-
-          {/* Mobile Menu Toggle */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
-            aria-label="Menu"
-          >
-            {isMobileMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <MenuIcon className="h-6 w-6" />
-            )}
+            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
-      </div>
-
-        {/* Search Bar */}
-        <AnimatePresence>
-          {searchOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              className="border-t py-4"
-            >
-              <div className="relative max-w-2xl mx-auto">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                <input
-                  type="search"
-                  placeholder="Search products, courses, docs..."
-                  className="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3BBBF0]"
-                  autoFocus
-                />
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
 
         {/* Mobile Menu */}
-        <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden border-t overflow-hidden"
-            >
-              <nav className="py-4 space-y-1">
-                {menuData.megaMenu.map((item) => (
-                  <div key={item.label} className="space-y-1">
-                    {item.href ? (
-                      <a
-                        href={item.href}
-                        className="block px-4 py-2 text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-800"
-                      >
-                        {item.label}
-                      </a>
-                    ) : (
-                      <>
-                        <div className="px-4 py-2 text-sm font-semibold text-muted-foreground">
-                          {item.label}
-                        </div>
-                        {item.columns?.map((column) => (
-                          <div key={column.title} className="pl-4">
-                            <div className="text-xs font-semibold text-muted-foreground px-4 py-1">
-                              {column.title}
-                            </div>
-                            {column.items.map((link) => (
-                              <a
-                                key={link.label}
-                                href={link.href}
-                                className="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-800"
-                              >
-                                {link.label}
-                              </a>
-                            ))}
-                          </div>
-                        ))}
-                      </>
-                    )}
-                  </div>
-                ))}
-                <a
-                  href="/shop"
-                  className="block px-4 py-2 text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-800"
+        {isMenuOpen && (
+          <div className="md:hidden mt-4 py-4 border-t">
+            <div className="flex flex-col space-y-4">
+              {navItems.map((item) => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className={`font-medium py-2 ${
+                    location.pathname === item.path ? "text-primary" : "text-foreground"
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
                 >
-                  Shop
-                </a>
-                <div className="px-4 pt-4 space-y-2">
-                  <Button 
-                    onClick={() => {
-                      setDemoDialogOpen(true);
-                      setIsMobileMenuOpen(false);
-                    }}
-                    className="w-full bg-[#FF822E] hover:bg-[#FF822E]/90 text-white"
-                  >
-                    Book a Demo
-                  </Button>
+                  {item.name}
+                </Link>
+              ))}
+              <div className="pt-4 border-t">
+                <div className="flex items-center space-x-2 text-sm text-foreground mb-4">
+                  <Phone className="h-4 w-4" />
+                  <span>+91-8468076121</span>
                 </div>
-              </nav>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-      {/* Demo Dialog */}
-      <BookDemoDialog open={demoDialogOpen} onClose={() => setDemoDialogOpen(false)} />
+                <div className="flex items-center space-x-2 bg-muted px-3 py-2 rounded-full w-fit">
+                  <User className="h-5 w-5 text-primary" />
+                  <span className="text-sm font-medium">{userName || "Guest"}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
     </header>
   );
 };
