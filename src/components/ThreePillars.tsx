@@ -18,7 +18,7 @@ const ThreePillars = () => {
       ],
       cta: "Explore Courses",
       link: "/learn",
-      image: "/Learn Innovate Transform.png"
+      image: "/Copy of IMG-20250216-WA0030.jpg"
     },
     {
       id: "innovate",
@@ -50,7 +50,7 @@ const ThreePillars = () => {
       ],
       cta: "Tour Innovation Labs",
       link: "/transform",
-      image: "/WhatsApp Image 2025-11-01 at 00.24.00.jpeg"
+      image: "/WhatsApp Image 2025-10-28 at 21.10.23.jpeg"
     }
   ];
 

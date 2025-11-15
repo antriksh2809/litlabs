@@ -67,7 +67,7 @@ const ImpactStatistics = () => {
           >
             <div className="bg-white/20 rounded-2xl p-8 backdrop-blur-sm">
               <img 
-                src="/WhatsApp Image 2025-11-01 at 00.32.33.jpeg" 
+                src="/WhatsApp Image 2025-10-14 at 00.29.18.jpg" 
                 alt="Our Impact" 
                 className="w-full h-64 object-cover rounded-lg"
               />

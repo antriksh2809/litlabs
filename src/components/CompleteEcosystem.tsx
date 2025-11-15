@@ -89,7 +89,7 @@ const CompleteEcosystem = () => {
             <div className="space-y-6">
               <div className="mb-8">
                 <img 
-                  src="/ChatGPT Image Apr 30, 2025, 03_26_54 PM.png" 
+                  src="/WhatsApp Image 2025-10-14 at 00.13.57.jpg" 
                   alt="Complete Ecosystem" 
                   className="w-full h-64 object-cover rounded-lg"
                 />

@@ -20,7 +20,7 @@ const InnovationLabs = () => {
       description: "Machine learning basics. Computer vision. NLP. Ethics in AI.",
       examples: ["Image recognition", "Chatbots", "Predictive models"],
       link: "/transform#ai",
-      image: "/WhatsApp Image 2025-11-01 at 00.24.00.jpeg"
+      image: "/WhatsApp Image 2025-11-12 at 18.54.22.jpg"
     },
     {
       id: "drones",
@@ -29,7 +29,7 @@ const InnovationLabs = () => {
       description: "Design, build, and fly. Autonomous navigation. Real-world applications.",
       examples: ["Drone racing", "Aerial mapping", "Autonomous missions"],
       link: "/transform#drones",
-      image: "/WhatsApp Image 2025-11-01 at 00.32.32.jpeg"
+      image: "/WhatsApp Image 2025-11-01 at 00.32.33.jpeg"
     },
     {
       id: "3d-printing",
@@ -38,7 +38,7 @@ const InnovationLabs = () => {
       description: "CAD design. Rapid prototyping. Maker mindset.",
       examples: ["Custom designs", "Replacement parts", "Entrepreneurship"],
       link: "/transform#3d-printing",
-      image: "/WhatsApp Image 2025-11-01 at 00.32.33.jpeg"
+      image: "/WhatsApp Image 2025-11-05 at 15.26.43 (1).jpg"
     }
   ];
 
